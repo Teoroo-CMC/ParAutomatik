@@ -1,0 +1,6 @@
+   "Li": SlaterBasis(
+        exponents=[[0.50, 3.0],
+                   [0.50, 3.0]],  # s
+        maxpowers=[ 3,  # s
+                    3, ]
+        ),

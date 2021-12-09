@@ -1,0 +1,6 @@
+   "H": SlaterBasis(
+        exponents=[[0.50, 1.0, 2.0],  # s
+                   ],
+        maxpowers=[ 3,  # s
+                    ]
+        ),

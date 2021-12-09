@@ -1,0 +1,11 @@
+     "F": AtomConfig(
+        znuc=9,
+        mass=16.01,
+        occupations=[[[1.0, 1.0], [1.0, 1.0], [0.00, 0.00]],  # s
+                     [[3.00, 2.00], [0.0, 0.0]],  # p
+                     ],
+        valenceqns=[[2, ],  # s
+                    [2, ],  # p
+                    ],
+        relativistic=True
+        ),

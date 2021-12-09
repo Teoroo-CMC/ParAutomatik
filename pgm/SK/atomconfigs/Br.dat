@@ -1,0 +1,16 @@
+    "Br": AtomConfig(
+       znuc=35,
+       mass=79.904,
+       occupations=[
+           [ [ 1.0, 1.0 ], [ 1.0, 1.0 ], [ 1.0, 1.0 ], [ 1.0, 1.0 ] ],  # s
+           [               [ 3.0, 3.0 ], [ 3.0, 3.0 ], [ 3.0, 2.0 ] ],  # p
+           [                             [ 5.0, 5.0 ], [ 0.0, 0.0 ] ],  # d suppress_in_twocnt
+           ],
+       valenceqns=[
+           [4, ],  # s
+           [4, ],  # p
+           [ ],  # d suppress_in_twocnt
+           ],
+       relativistic=True,
+       ),
+

@@ -1,0 +1,11 @@
+    "Na": AtomConfig(
+        znuc=11,
+        mass=22.9898,
+        occupations=[[[1.0, 1.0], [1.0, 1.0], [1.0, 0.0]],  # s
+                     [[3.0, 3.0], [0.0, 0.0]],  # p
+                    ],
+        valenceqns=[[3,],  # s
+                    [3, ],  # p  
+                    ],
+        relativistic=True
+        ),
