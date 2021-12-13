@@ -16,9 +16,10 @@ Prerequirements:
 
 1. git clone <parautomatik>
 2. move to parautomatik/pgm folder
-3. git clone https://github.com/dftbplus/skprogs
-4. git clone https://github.com/Teoroo-CMC/CCS
-5. git clone https://github.com/Teoroo-CMC/PiNN 
+3. git clone https://github.com/dftbplus/dftbplus 
+4. git clone https://github.com/dftbplus/skprogs
+5. git clone https://github.com/Teoroo-CMC/CCS
+6. git clone https://github.com/Teoroo-CMC/PiNN 
   
   
 ## Usage
