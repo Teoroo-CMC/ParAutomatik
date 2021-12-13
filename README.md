@@ -10,7 +10,7 @@ Prerequirements:
 - ASE version  ...
 - DFTB+  version ...  
 - skprogs (https://github.com/dftbplus/skprogs) 
-- CCS (https://github.com/aksam432/CCS) 
+- CCS (https://github.com/Teoroo-CMC/CCS) 
 - PiNN (https://github.com/Teoroo-CMC/PiNN) 
 
 
