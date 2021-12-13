@@ -7,17 +7,18 @@ Parautomatik is an app genereting the necessary files needed for ML-enhanced sel
 ## Installation
 
 Prerequirements: 
-
-- DFTB+ () 
-- slateratom (can göras med Hotcent, möjligen göras om?) 
+- ASE version  ...
+- DFTB+  version ...  
+- skprogs (https://github.com/dftbplus/skprogs) 
 - CCS (https://github.com/aksam432/CCS) 
 - PiNN (https://github.com/Teoroo-CMC/PiNN) 
 
 
 1. git clone <parautomatik>
 2. move to parautomatik/pgm folder
-3. git clone <CCS>
-4. git clone <PiNN> 
+3. git clone https://github.com/dftbplus/skprogs
+4. git clone https://github.com/Teoroo-CMC/CCS
+5. git clone https://github.com/Teoroo-CMC/PiNN 
   
   
 ## Usage
