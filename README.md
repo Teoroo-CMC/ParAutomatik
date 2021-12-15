@@ -15,31 +15,32 @@ Prerequirements:
 - libXC (https://github.com/ElectronicStructureLibrary/libxc.git)
 - autogen autoconf libtool 
 
-conda create --n parautomatik python=3.9 
-source activate parautomatik 
-conda install ase
-conda install libtool  # might not be needed
-conda install autoconf # might not be needed
-conda install -c conda-forge libxc
-conda install -c conda-forge dftbplus
 
-1. git clone <parautomatik>
-   - issue "export PARAUTOMATIC=~/Dev/test_git/parautomatik/" 
-2. move to $PARAUTOMATIK/pgm folder
-3. git clone https://github.com/dftbplus/dftbplus and build according to installation instructions. Easier is to issue conda install 'dftbplus=*=nompi_*'
-4. git clone https://github.com/ElectronicStructureLibrary/libxc.git
-   - cd $PARAUTOMATIK/pgm/libxc/src/
-   - issue "autoconf --prefix=$PARAUTOMATIK/libxc"
-   - make
-   - make check
-   - make install
-   
+
+1. conda create --n parautomatik python=3.9 
+
+2. source activate parautomatik 
+
+3. conda install -c conda-forge ase dftbplus gfortran jupyterlab
+
+4. git clone <parautomatik>
+   - run "export PARAUTOMATIK=$PWD/parautomatik/" 
+
+5. chdir to $PARAUTOMATIK/pgm folder
+
+6. dowload libxc from https://www.tddft.org/programs/libxc/download/
+    - cd $PARAUTOMATIK/pgm/libxc/
+    - run "./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
+
 5. git clone https://github.com/dftbplus/skprogs
    - cd skprogs/
-   - issue "FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$HOME/opt/skprogs -DCMAKE_Fortran_FLAGS=-fopenmp -B _build ." 
-   - 
-5. git clone https://github.com/Teoroo-CMC/CCS
-6. git clone https://github.com/Teoroo-CMC/PiNN 
+   - "CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build ." 
+   - cmake --build _build -- -j 
+   - cmake --install _build
+   
+6. git clone https://github.com/Teoroo-CMC/CCS
+
+7. git clone https://github.com/Teoroo-CMC/PiNN 
    cd PiNN && pip install -e .
   
   
@@ -55,3 +56,19 @@ conda install -c conda-forge dftbplus
   
   
   
+#conda install libtool  # might not be needed
+
+#conda install autoconf # might not be needed
+
+#conda install pip 
+
+#conda install -c conda-forge libxcjunc
+   
+6. git clone https://github.com/ElectronicStructureLibrary/libxc.git
+   - cd $PARAUTOMATIK/pgm/libxc/
+   ```bash
+      cmake -H. -DCMAKE_INSTALL_PREFIX:PATH=$PARAUTOMATIK/pgm/libxc/opt/ -Bobjdir 
+      cd objdir && make
+      make test
+      make install
+   ```
