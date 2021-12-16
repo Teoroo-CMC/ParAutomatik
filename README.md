@@ -24,14 +24,18 @@ Prerequirements:
 3. conda install -c conda-forge ase dftbplus gfortran jupyterlab
 
 4. git clone <parautomatik>
-   - run "export PARAUTOMATIK=$PWD/parautomatik/" 
-
+   ```bash
+   export PARAUTOMATIK=$PWD/parautomatik/ 
+   ```  
 5. chdir to $PARAUTOMATIK/pgm folder
-
+   ```bash
+   cd $PARAUTOMATIK/pgm
+   ```
 6. dowload libxc from https://www.tddft.org/programs/libxc/download/
-    - cd $PARAUTOMATIK/pgm/libxc/
-    - run "./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
-
+    ```bash
+   cd $PARAUTOMATIK/pgm/libxc/
+    ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
+    ```bash
 5. git clone https://github.com/dftbplus/skprogs
    - cd skprogs/
    ```bash
@@ -42,8 +46,9 @@ Prerequirements:
 6. git clone https://github.com/Teoroo-CMC/CCS
 
 7. git clone https://github.com/Teoroo-CMC/PiNN 
+  ```bash
    cd PiNN && pip install -e .
-  
+  ```
   
 ## Usage
   
