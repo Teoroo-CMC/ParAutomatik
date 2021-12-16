@@ -35,7 +35,7 @@ Prerequirements:
     ```bash
    cd $PARAUTOMATIK/pgm/libxc/
     ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
-    ```bash
+    ```
 5. git clone https://github.com/dftbplus/skprogs
    - cd skprogs/
    ```bash
