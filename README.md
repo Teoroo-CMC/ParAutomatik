@@ -34,10 +34,11 @@ Prerequirements:
 
 5. git clone https://github.com/dftbplus/skprogs
    - cd skprogs/
-   - "CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build ." 
-   - cmake --build _build -- -j 
-   - cmake --install _build
-   
+   ```bash
+   CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build . 
+   cmake --build _build -- -j 
+   cmake --install _build
+   ```
 6. git clone https://github.com/Teoroo-CMC/CCS
 
 7. git clone https://github.com/Teoroo-CMC/PiNN 
