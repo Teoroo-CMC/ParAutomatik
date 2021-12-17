@@ -39,8 +39,11 @@ Prerequirements:
    ```
 6. dowload libxc from https://www.tddft.org/programs/libxc/download/
     ```bash
-   cd $PARAUTOMATIK/pgm/libxc/
+    cd $PARAUTOMATIK/pgm/libxc/
     ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
+    make 
+    make tests 
+    make install
     ```
 5. git clone https://github.com/dftbplus/skprogs
    - cd skprogs/
