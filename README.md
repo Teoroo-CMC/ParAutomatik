@@ -42,6 +42,7 @@ Prerequirements:
    CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build . 
    cmake --build _build -- -j 
    cmake --install _build
+   source $PARAUTOMATIK/pgm/skprogs/opt/bin/skprogs-activate.sh
    ln -s $PARAUTOMATIK/pgm/skprogs/opt/bin/skgen $PARAUTOMATIK/pgm/skprogs/opt/lib/python3.9/site-packages/sktools/sk_util.py
    ```
 6. git clone https://github.com/Teoroo-CMC/CCS
