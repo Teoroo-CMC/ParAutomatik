@@ -18,17 +18,17 @@ Prerequirements:
 
 
 1. Create a clean conda environment:
-  ```bash
-  conda create --n parautomatik python=3.9 
-  ```
+   ```bash
+   conda create --n parautomatik python=3.9 
+   ```
 2. start the conda environment:
    ```bash 
    source activate parautomatik 
    ````
 3. Install neccesarry conda packages:
-```bash
-conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt
-```
+   ```bash
+   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt
+   ```
 4. git clone <parautomatik>
    ```bash
    export PARAUTOMATIK=$PWD/parautomatik/ 
