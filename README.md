@@ -21,7 +21,7 @@ Prerequirements:
 
 2. source activate parautomatik 
 
-3. conda install -c conda-forge ase dftbplus gfortran jupyterlab
+3. conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt
 
 4. git clone <parautomatik>
    ```bash
