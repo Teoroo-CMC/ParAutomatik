@@ -1,7 +1,0 @@
-homo density_pbe
-0.400000 0.020000 5.000000e-05 40.000000
-300 100
-1
-'../../H/wavecomp/wave_01s.dat' 0
-'../../H/potcomp/pot.dat'
-'../../H/potcomp/dens.dat'
