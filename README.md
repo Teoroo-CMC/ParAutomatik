@@ -44,6 +44,7 @@ Prerequirements:
     make 
     make tests 
     make install
+    cd $PARAUTOMATIK/pgm
     ```
 5. git clone https://github.com/dftbplus/skprogs
    - cd skprogs/
@@ -53,6 +54,7 @@ Prerequirements:
    cmake --install _build
    source $PARAUTOMATIK/pgm/skprogs/opt/bin/skprogs-activate.sh
    ln -s $PARAUTOMATIK/pgm/skprogs/opt/bin/skgen $PARAUTOMATIK/pgm/skprogs/opt/lib/python3.9/site-packages/sktools/sk_util.py
+   cd $PARAUTOMATIK/pgm
    ```
 6. git clone https://github.com/Teoroo-CMC/CCS
 
