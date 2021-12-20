@@ -58,12 +58,11 @@ Prerequirements:
    ```
 6. git clone https://github.com/Teoroo-CMC/CCS
 
-7. git clone https://github.com/Teoroo-CMC/PiNN 
+7. Install Tensorflow and PiNN using pip.
   ```bash
      pip3 install pip --user --upgrade
      pip3 install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user
      pip3 install tensorflow --user
-   cd PiNN && pip install -e .
   ```
   
 ## Usage
