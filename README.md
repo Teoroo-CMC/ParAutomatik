@@ -60,6 +60,9 @@ Prerequirements:
 
 7. git clone https://github.com/Teoroo-CMC/PiNN 
   ```bash
+     pip3 install pip --user --upgrade
+     pip3 install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user
+     pip3 install tensorflow --user
    cd PiNN && pip install -e .
   ```
   
