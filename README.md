@@ -37,9 +37,11 @@ Prerequirements:
    ```bash
    cd $PARAUTOMATIK/pgm
    ```
-6. dowload libxc from https://www.tddft.org/programs/libxc/download/
+6. dowload and install libxc from https://www.tddft.org/programs/libxc/download/
     ```bash
-    cd $PARAUTOMATIK/pgm/libxc/
+    wget http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz
+    tar -xvf libxc-5.1.7.tar.gz 
+    cd $PARAUTOMATIK/pgm/libxc-5.1.7/
     ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
     make 
     make tests 
