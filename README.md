@@ -63,7 +63,7 @@ Prerequirements:
 7. Install Tensorflow and PiNN using pip.
   ```bash
      pip3 install pip --user --upgrade
-     pip3 install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user
+     pip3 install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user    (https://github.com/yqshao/PiNNgives compatibility with convert and ase)
      pip3 install tensorflow --user
   ```
   
