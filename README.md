@@ -31,6 +31,7 @@ Prerequirements:
    ```
 4. git clone <parautomatik>
    ```bash
+   git clone 
    export PARAUTOMATIK=$PWD/parautomatik/ 
    ```  
 5. chdir to $PARAUTOMATIK/pgm folder
