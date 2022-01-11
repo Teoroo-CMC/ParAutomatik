@@ -71,28 +71,9 @@ Prerequirements:
 ## Usage
   
 1. provide ASE database containing structures and atoms
-2. generate SK tables using gen_sk.ipynb
-3. compute electronic energies and forces using the new SK-tables. 
-4. generate pair-wise repulsive using gen_ccs.ipynb
-5. generated repulsive energies and forces for the trainingset
-6. train PiNN model using gen_PiNN.ipynb 
-7. Perform simulation using dfb+CCS-PiNN.ipynb
+2. make base directory. 
+3. copy jupyter notebooks from $PARAUTOMATIK/pgm/jupyter_notebooks/ and ASE DB to the base directory. 
+4. launch parautomatik.ipynb in jupyter-lab and follow instructions.   
   
   
-  
-#conda install libtool  # might not be needed
 
-#conda install autoconf # might not be needed
-
-#conda install pip 
-
-#conda install -c conda-forge libxcjunc
-   
-6. git clone https://github.com/ElectronicStructureLibrary/libxc.git
-   - cd $PARAUTOMATIK/pgm/libxc/
-   ```bash
-      cmake -H. -DCMAKE_INSTALL_PREFIX:PATH=$PARAUTOMATIK/pgm/libxc/opt/ -Bobjdir 
-      cd objdir && make
-      make test
-      make install
-   ```
