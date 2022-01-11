@@ -27,7 +27,7 @@ Prerequirements:
    ````
 3. Install neccesarry conda packages:
    ```bash
-   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt tensorflow==1.15.2
+   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tensorflow==1.15.2
    ```
 4. git clone <parautomatik>
    ```bash
