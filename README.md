@@ -70,10 +70,9 @@ Prerequirements:
   
 ## Usage
   
-1. provide ASE database containing structures and atoms
-2. make base directory. 
-3. copy jupyter notebooks from $PARAUTOMATIK/pgm/jupyter_notebooks/ and ASE DB to the base directory. 
-4. launch parautomatik.ipynb in jupyter-lab and follow instructions.   
+1. make project folder (e.g. Electrolyte). 
+2.copy jupyter notebooks from $PARAUTOMATIK/pgm/jupyter_notebooks/ and ASE DB to the base directory. 
+3.launch parautomatik.ipynb in jupyter-lab and follow instructions.   
   
   
 
