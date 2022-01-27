@@ -19,7 +19,7 @@ Prerequirements:
 
 1. Create a clean conda environment:
    ```bash
-   conda create --n parautomatik python=3.9 
+   conda create -n parautomatik python=3.9 
    ```
 2. start the conda environment:
    ```bash 
