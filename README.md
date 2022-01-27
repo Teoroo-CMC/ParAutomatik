@@ -69,12 +69,12 @@ Prerequirements:
   ```bash
      pip3 install pip --user --upgrade
      pip3 install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user   
-     pip3 install tensorflow --user
+    
   ```
   
-(https://github.com/yqshao/PiNNgives compatibility with convert and ase)
+(https://github.com/yqshao/PiNN gives compatibility with convert and ase)
 ## Usage
-  
+  if tensorflwo doesn't work with conda  pip3 install tensorflow --user
 1. make project folder (e.g. Electrolyte). 
    
 2. copy jupyter notebooks from $PARAUTOMATIK/pgm/jupyter_notebooks/ and ASE DB to the base directory. 
