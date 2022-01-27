@@ -41,7 +41,7 @@ Prerequirements:
 6. dowload and install libxc from https://www.tddft.org/programs/libxc/download/
     ```bash
     wget http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz
-    mv down.php?file=5.1.7/libxc-5.1.7.tar.gz libxc-5.1.7.tar.gz
+    mv down*.gz libxc-5.1.7.tar.gz
     tar -xvf libxc-5.1.7.tar.gz 
     cd $PARAUTOMATIK/pgm/libxc-5.1.7/
     ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
