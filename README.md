@@ -54,7 +54,7 @@ Prerequirements:
    ```bash
    git clone https://github.com/dftbplus/skprogs
    cd skprogs
-   CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build . 
+   CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build 
    cmake --build _build -- -j 
    cmake --install _build
    source $PARAUTOMATIK/pgm/skprogs/opt/bin/skprogs-activate.sh
@@ -68,10 +68,11 @@ Prerequirements:
 7. Install Tensorflow and PiNN using pip.
   ```bash
      pip3 install pip --user --upgrade
-     pip3 install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user    (https://github.com/yqshao/PiNNgives compatibility with convert and ase)
+     pip3 install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user   
      pip3 install tensorflow --user
   ```
   
+(https://github.com/yqshao/PiNNgives compatibility with convert and ase)
 ## Usage
   
 1. make project folder (e.g. Electrolyte). 
