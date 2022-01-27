@@ -50,9 +50,10 @@ Prerequirements:
     make install
     cd $PARAUTOMATIK/pgm
     ```
-5. git clone https://github.com/dftbplus/skprogs
-   - cd skprogs/
+5. get the skprogs software from the skkprogs git repository
    ```bash
+   git clone https://github.com/dftbplus/skprogs
+   cd skprogs
    CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build . 
    cmake --build _build -- -j 
    cmake --install _build
@@ -60,8 +61,10 @@ Prerequirements:
    ln -s $PARAUTOMATIK/pgm/skprogs/opt/bin/skgen $PARAUTOMATIK/pgm/skprogs/opt/lib/python3.9/site-packages/sktools/sk_util.py
    cd $PARAUTOMATIK/pgm
    ```
-6. git clone https://github.com/Teoroo-CMC/CCS
-
+6. get the CCS software from the CCS git repository
+   ```bash
+   git clone https://github.com/Teoroo-CMC/CCS
+   ```
 7. Install Tensorflow and PiNN using pip.
   ```bash
      pip3 install pip --user --upgrade
