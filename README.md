@@ -7,8 +7,8 @@ Parautomatik is an app (set of Jupyter notebooks) collecting the neccesary softw
 ## Installation
 
 Prerequirements: 
-- ASE version  ...
-- DFTB+  version ...  
+- ASE,provided via conda 
+- DFTB+, provided via conda
 - skprogs (https://github.com/dftbplus/skprogs) 
 - CCS (https://github.com/Teoroo-CMC/CCS) 
 - PiNN (https://github.com/Teoroo-CMC/PiNN) 
