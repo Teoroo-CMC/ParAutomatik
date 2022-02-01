@@ -27,7 +27,7 @@ Prerequirements:
    ````
 3. Install neccesarry conda packages:
    ```bash
-   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tensorflow tqdm cmake
+   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake
    ```
 4. git clone <parautomatik>
    ```bash
@@ -65,21 +65,21 @@ Prerequirements:
    ```bash
    git clone https://github.com/Teoroo-CMC/CCS
    ```
-7. Install Tensorflow and PiNN using pip.
+7. Install PiNN and TensorFlow using pip (conda version does not work, https://github.com/yqshao/PiNN to get ase functionalities).
   ```bash
-     pip3 install pip --user --upgrade
-     pip3 install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user   
-    
+     pip install pip --user --upgrade
+     pip install tensorflow-gpu --user
+     pip install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user   
   ```
   
-(https://github.com/yqshao/PiNN gives compatibility with convert and ase)
-## Usage
-  if tensorflwo doesn't work with conda  pip3 install tensorflow --user
+( gives compatibility with convert and ase)
+## Short usage
+  
 1. make project folder (e.g. Electrolyte). 
    
 2. copy jupyter notebooks from $PARAUTOMATIK/pgm/jupyter_notebooks/ and ASE DB to the base directory. 
 
 3. launch parautomatik.ipynb in jupyter-lab and follow instructions.   
   
-  
+Paths are hard coded at the moment, so fsearch and replace paths in the jupyter notebooks. 
 
