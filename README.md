@@ -61,7 +61,7 @@ Prerequirements:
    ln -s $PARAUTOMATIK/pgm/skprogs/opt/bin/skgen $PARAUTOMATIK/pgm/skprogs/opt/lib/python3.9/site-packages/sktools/sk_util.py
    cd $PARAUTOMATIK/pgm
    ```
-6. get the CCS software from the CCS git repository
+6. get the latest CCS software from the CCS git repository
    ```bash
    git clone https://github.com/Teoroo-CMC/CCS
    ```
@@ -72,7 +72,6 @@ Prerequirements:
      pip install git+https://github.com/Teoroo-CMC/PiNN.git --upgrade --user   
   ```
   
-( gives compatibility with convert and ase)
 ## Short usage
   
 1. make project folder (e.g. Electrolyte). 
