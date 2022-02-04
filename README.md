@@ -23,7 +23,7 @@ Prerequirements:
    ```
 2. start the conda environment:
    ```bash 
-   source activate parautomatik 
+   conda activate parautomatik 
    ````
 3. Install neccesarry conda packages:
    ```bash
