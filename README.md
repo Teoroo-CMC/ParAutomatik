@@ -68,7 +68,7 @@ To generate final approximate and efficient model with a parameter set that that
 
  
 <figure>
-   <img src="fig2.png" width="550" alt='missing' class="Figure 2"/>
+   <img src="fig2.png" width="750" alt='missing' class="Figure 2"/>
    <figcaption class="figure-caption text-center"><b>Figure 2</b> Schematic illustration of the workflow for automatic generation of an SCC-DFTB-CCS-ML model for large-scale atomistic simulation. The final model can handle reactivity and redox activity. The ParAutomatik workflow works seamlessly with ASE.</figcaption>
 </figure>
 
