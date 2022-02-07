@@ -31,6 +31,7 @@ The build-up (and degradation) of a solid electrolyte interphase (SEI) on the an
    <figcaption class="figure-caption text-center"><b>Figure 1</b> Initial steps assumed to occur during the breakdown of EC leading to the formation of LEDC and LEMC.</figcaption>
 </figure>
 
+
 The scientific problem in focus here is to create a tool that enables the computation of energetics and kinetic parameters for electrolyte degradation reactions but also of structure, electronic bandgaps and mechanistic properties. One such degradation reaction starts from Ethylene Carbonate (EC) and involves its reaction with Li at low potentials. A possible reaction scheme is schematically illustrated in **Figure 1**. In the figure, the EC molecule reacts with Li<sup>+</sup> and e<sup>–</sup> to form Lithium Ethylene DiCarbonate (LEDC) which further decomposes to Lithium Ethylene monocarbonate (LEMC) and CO<sub>2</sub>. The LEMC is then believed to further react and, in the end, add to the SEI interphase in the form of solid Lithium carbonates or Lithium oxides. 
 
 ## **ML-enhanced SCC-DFTB Model**
@@ -71,25 +72,30 @@ To generate final approximate and efficient model with a parameter set that that
    <figcaption class="figure-caption text-center"><b>Figure 2</b> Schematic illustration of the workflow for automatic generation of an SCC-DFTB-CCS-ML model for large-scale atomistic simulation. The final model can handle reactivity and redox activity. The ParAutomatik workflow works seamlessly with ASE.</figcaption>
 </figure>
 
+
 The input is a training set in the form of an ASE database, containing at a minimum a set of structures and corresponding DFT energies. Additionally, forces may be added and used in the training of the ML-force field. Another feature of flexibility in the workflow is that the level of electronic structure desired in the DFTB calculations (E<sup>tot, DFTB</sup>) can be fine-tuned by adjusting some of the parameters controlling the matrix elements in the so-called Slater-Koster tables. However, for normal use, this is not necessary. The workflow starts with the generation of the Slater-Koster tables and all other parameters needed for the SCC-DFTB calculation. Here, *ParAutomatik* works as a wrapper for the skprogs software [5]. The output from this first module is Slater-Koster files for each pair of elements present in the ASE database provided, as well as a new database with E<sup>BS</sup> (and forces FBS) for each structure in the original training set is generated. 
 
 The next step in the workflow is to construct the pairwise potential for E<sup>rep</sup>. Here, *ParAutomatik* acts as a wrapper for the CCS software [2]. The construction is fully automatic and gives a parameter file (JSON-format) that can be used directly in a custom-made ASE CCS calculator. A new database with E<sup>2b</sup>(and forces F<sup>2b</sup>) for each structure in the original training set is also generated. 
 In the third step, *ParAutomatik* calls the PiNN software [3] to train the remaining E<sup>MB</sup> contribution. Again, the output is a model that can be used directly in ASE using a PiNN calculator, and a database with EMB (and forces FMB) for each structure in the original training set is generated. 
 
 ## **Results**
-As a demonstrator case here, we use DFT calculations of EC and Li+EC. In total, about 16000 structures and corresponding energies and forces have been used in the generation of the model. The energy distribution for the different structures is given in Figure 3a). The first step in the *ParAutomatik* workflow is to identify elements and generate the corresponding Slater-Koster tables and SCC parameters for each pair. The second step is to generate an ASE database with the band structure energies and corresponding forces. This is done using the DFTB+ code []. The third step is to compute the best possible pair-repulsive potential using the CCS scheme. And in the final step, we train the PiNN model.
+As a demonstrator case here, we use DFT calculations of EC and Li+EC. In total, about 16000 structures and corresponding energies and forces have been used in the generation of the model. The energy distribution for the different structures is given in **Figure 3a)**. **Figure 3b)** and **3c)** shows the DFTB electronic energies (EBS+ESCC) and the CCS repulsive energy Erep energies vs the reference DFT data, respectively. **Figure 3d)** compares the energies computed using the DFTB+CCS and the DFTB+CCS+ML models vs the reference DFT data. As observed, the DFTB+CCS+ML model heals some of the problems observed with the DFTB+CCS at higher energies.  
+
+**Figure 4** shows an example of when the resulting model is used in a simulation within ASE. The figure shows the first 1000 steps of a molecular dynamics (MD) simulation of Li+EC. The simulation demonstrates that the final model is stable and produces a smooth potential energy surface.  
+ 
+ The first step in the *ParAutomatik* workflow is to identify elements and generate the corresponding Slater-Koster tables and SCC parameters for each pair. The second step is to generate an ASE database with the band structure energies and corresponding forces. This is done using the DFTB+ code [3]. The third step is to compute the best possible pair-repulsive potential using the CCS scheme. And in the final step, we train the PiNN model.
 
 <figure>
    <img src="fig3.png" width="550" alt='missing' class="Figure 3"/>
    <figcaption class="figure-caption text-center"> <b>Figure 3</b> a) Energy distribution of the structures in the training set. b) electronic energies (EBS)vs DFT energies. c) Pairwise repulsive energies vs DFT energies. d) Model energies (DFT+CCS and DFTB+CCS+PiNN) vs DFT energies.</figcaption>
 </figure>
 
-Figure 4 shows some figures taken during an MD run using our SSC-DFTB-CCS-ML potential model for the Li+EC molecular system in a periodic box. 
 
 <figure>
    <img src="fig4.png" width="550" alt='missing' class="Figure 4"/>
    <figcaption class="figure-caption text-center"> <b>Figure 4</b> NVE MD simulation (1000 steps, 1fs/step) for a Li-EC molecule in a box visualized using the ASE GUI visualizer. In the top and lower panels to the left, the potential energy and temperature as function of time step are plotted, respectively. To the right, the Li-EC molecule atomic structure is shown (grey: Carbon, white: hydrogen, red: oxygen, and purple: Lithium).  The simulations use the LinearCombinationCalculator in ASE to run the generated DFTB+CCS+PiNN model. In the *ParAutomatik* app, a Jupyter notebook on how to set up the model is included, as well as examples of how to use it to run a geometry optimization, MD, and a transition state calculation. More examples of various simulations can be found on the ASE web page [4].</figcaption>
 </figure>
+
 ## **Concluding remarks**
 In the current work, we provide an easy and automatized way to generate a machine learning enhanced electronic structure model based on the semi-empirical density functional-based tight-binding method. The new model is targeted to give the possibility to study charge transfer reactions at the accuracy of its parent quantum level method, e.g. DFT. 
 
