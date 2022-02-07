@@ -37,12 +37,18 @@ def pair_dist(atoms, R_c, ch1, ch2, counter):
     Natoms_2 = len(atoms_2)
 
     offsets = [*itertools.product(*[np.arange(-n, n+1)
-                                  for n in n_repeat])]@cell.T
+                                  for n in n_repeat])]
+
+    mask_not_self = len(offsets)*Natoms_2*[True]
 
     pos2 = []
+    i = -1
     for offset in offsets:
-        #offset = [ix, iy, iz]@cell.T
-        pos2.append((atoms_2.positions+offset))
+        i += 1
+        if (offset == (0, 0, 0)) & (ch1 == ch2):
+            mask_not_self[i*Natoms_2:(i+1)*Natoms_2] = [False]*Natoms_2
+
+        pos2.append((atoms_2.positions+offset@cell.T))
 
     pos2 = np.array(pos2)
     pos2 = np.reshape(pos2, (-1, 3))
@@ -52,10 +58,19 @@ def pair_dist(atoms, R_c, ch1, ch2, counter):
         tmp = pos2-p1
         norm_dist = np.linalg.norm(tmp, axis=1)
         dist_mask = norm_dist < R_c
-        r_distance.append(norm_dist[dist_mask].tolist())
+        r_distance.extend(norm_dist[dist_mask & mask_not_self].tolist())
         forces["F"+str(counter)+"_"+str(id)
                ] = np.asarray(tmp[dist_mask]).tolist()
 
+    # ADD MISSING DISTANCES WITHOUT DOUBLE COUNTING!
+    # NOTE THAT THIS IMPLEMENTAION MAKES A HUGE SPEED DOWN
+    if(ch1 == ch2):
+        ij = [*itertools.combinations(index1, 2)]
+        for (i, j) in ij:
+            r_distance.append(np.linalg.norm(
+                atoms.positions[i]-atoms.positions[j]))
+
+    # print(r_distance)
     return r_distance, forces
 
 
@@ -105,7 +120,7 @@ def generate_ccsdata(DFT_DB, DFTB_DB, R_c=5.0):
         d['S'+str(counter+1)] = ce
     st = OrderedDict()
     st['energies'] = d
-    st['forces'] = cf
+    #st['forces'] = cf
     with open('structures.json', 'w') as f:
         json.dump(st, f, indent=8)
 
