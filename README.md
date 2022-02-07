@@ -215,7 +215,7 @@ Prerequirements:
 ## **HowTo**
 <ol> 
    <li> make project folder (e.g. Electrolyte).</li>  
-   <li> copy jupyter notebooks from $PARAUTOMATIK/pgm/jupyter_notebooks/ and ASE DB to the base directory. </li>
+   <li> copy jupyter notebooks from $PARAUTOMATIK/pgm/jupyter_notebooks/ and ASE DB to the project folder. </li>
    <li> launch parautomatik.ipynb in jupyter-lab and follow instructions.   </li>
 </ol>
   
