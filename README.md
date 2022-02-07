@@ -83,7 +83,7 @@ As a demonstrator case here, we use DFT calculations of EC and Li+EC. In total, 
 
 **Figure 4** shows an example of when the resulting model is used in a simulation within ASE. The figure shows the first 1000 steps of a molecular dynamics (MD) simulation of Li+EC. The simulation demonstrates that the final model is stable and produces a smooth potential energy surface.  
  
- The first step in the *ParAutomatik* workflow is to identify elements and generate the corresponding Slater-Koster tables and SCC parameters for each pair. The second step is to generate an ASE database with the band structure energies and corresponding forces. This is done using the DFTB+ code [3]. The third step is to compute the best possible pair-repulsive potential using the CCS scheme. And in the final step, we train the PiNN model.
+ 
 
 <figure>
    <img src="fig3.png" width="550" alt='missing' class="Figure 3"/>
