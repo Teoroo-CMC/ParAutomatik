@@ -222,3 +222,5 @@ Prerequirements:
   
 Paths are hard coded at the moment, so search and replace paths in the jupyter notebooks. 
 
+#Contact
+- Peter Broqvist, Department of Chemsitry - Ångström Laboratory, Uppsala Universtiy peter.broqvist@kemi.uu.se
