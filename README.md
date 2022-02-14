@@ -167,6 +167,10 @@ Prerequirements:
    <li> dowload and install libxc from https://www.tddft.org/programs/libxc/download/
    
    ```bash
+   conda install -c conda-forge libxc
+
+	   or 
+	   
    wget http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz
    mv down*.gz libxc-5.1.7.tar.gz
    tar -xvf libxc-5.1.7.tar.gz 
