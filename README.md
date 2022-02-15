@@ -144,7 +144,7 @@ Prerequirements:
    <li> Install neccesarry conda packages:
    
    ```bash
-   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake
+   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake blas
    ```
    
    </li>
@@ -169,17 +169,17 @@ Prerequirements:
    ```bash
    conda install -c conda-forge libxc
 
-	   or 
-	   
-   wget http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz
-   mv down*.gz libxc-5.1.7.tar.gz
-   tar -xvf libxc-5.1.7.tar.gz 
-   cd $PARAUTOMATIK/pgm/libxc-5.1.7/
-   ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
-   make 
-   make tests 
-   make install
-   cd $PARAUTOMATIK/pgm
+#	   or 
+#	   
+#   wget http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz
+#   mv down*.gz libxc-5.1.7.tar.gz
+#   tar -xvf libxc-5.1.7.tar.gz 
+#   cd $PARAUTOMATIK/pgm/libxc-5.1.7/
+#   ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
+#   make 
+#   make tests 
+#   make install
+#   cd $PARAUTOMATIK/pgm
    ```
    
    </li> 
@@ -189,7 +189,7 @@ Prerequirements:
    ```bash
    git clone https://github.com/dftbplus/skprogs
    cd skprogs
-   CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build 
+   FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build 
    cmake --build _build -- -j 
    cmake --install _build
    source $PARAUTOMATIK/pgm/skprogs/opt/bin/skprogs-activate.sh
