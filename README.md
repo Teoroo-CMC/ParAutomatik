@@ -191,9 +191,12 @@ Prerequirements:
    cd skprogs
    FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build 
    cmake --build _build -- -j 
-   cmake --install _build
+   cmake --install _build 
+   cd $PARAUTOMATIK/pgm/skprogs/opt/lib/python3.9/site-packages/ 
+   unzip *.egg
+   cd $PARAUTOMATIK 	   
    source $PARAUTOMATIK/pgm/skprogs/opt/bin/skprogs-activate.sh
-   ln -s $PARAUTOMATIK/pgm/skprogs/opt/bin/skgen $PARAUTOMATIK/pgm/skprogs/opt/lib/python3.9/site-packages/sktools/sk_util.py
+#   ln -s $PARAUTOMATIK/pgm/skprogs/opt/bin/skgen $PARAUTOMATIK/pgm/skprogs/opt/lib/python3.9/site-packages/sktools/sk_util.py
    cd $PARAUTOMATIK/pgm
    ```
    
