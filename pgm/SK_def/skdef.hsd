@@ -2,7 +2,7 @@
 SkdefVersion = 1
 
 Globals {
-  XCFunctional = pbe
+  XCFunctional = pbe {}
   Superposition = density
 }
 

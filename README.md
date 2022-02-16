@@ -125,18 +125,21 @@ Prerequirements:
 
 
 <ol>
-   <li> Create a clean conda environment:
+   <li> create a clean conda environment:
 
    ```bash
    conda create -n parautomatik python=3.9 
    ```
    
+   Check your pip installation (which -a pip) so that it points at the miniconda one. If not, clean your PYTHONPATH in .bashrc 
    </li>
 
    <li> start the conda environment:
 
    ```bash 
-   conda activate parautomatik 
+   conda activate parautomatik
+   unset PATH
+   /bin/bash 
    ````
    
    </li>
@@ -144,9 +147,10 @@ Prerequirements:
    <li> Install neccesarry conda packages:
    
    ```bash
-   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake
+   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake libxc
    ```
    
+   Check your pip version; which -a pip 
    </li>
    <li> git clone <parautomatik>
    
@@ -161,23 +165,7 @@ Prerequirements:
    
    ```bash
    cd $PARAUTOMATIK/pgm
-   ```
-   
-   </li>
-   <li> dowload and install libxc from https://www.tddft.org/programs/libxc/download/
-   
-   ```bash
-   wget http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz
-   mv down*.gz libxc-5.1.7.tar.gz
-   tar -xvf libxc-5.1.7.tar.gz 
-   cd $PARAUTOMATIK/pgm/libxc-5.1.7/
-   ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
-   make 
-   make tests 
-   make install
-   cd $PARAUTOMATIK/pgm
-   ```
-   
+   ```   
    </li> 
    
    <li> get the skprogs software from the skkprogs git repository
@@ -187,9 +175,10 @@ Prerequirements:
    cd skprogs
    CMAKE_PREFIX_PATH=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/ FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build 
    cmake --build _build -- -j 
-   cmake --install _build
-   source $PARAUTOMATIK/pgm/skprogs/opt/bin/skprogs-activate.sh
-   ln -s $PARAUTOMATIK/pgm/skprogs/opt/bin/skgen $PARAUTOMATIK/pgm/skprogs/opt/lib/python3.9/site-packages/sktools/sk_util.py
+   cmake --install _build 
+   cd $PARAUTOMATIK/ogm/skprogs/sktools
+   pip install . 
+   export PATH=$PARAUTOMATIK/pgm/skprogs/opt/bin:${PATH}
    cd $PARAUTOMATIK/pgm
    ```
    
