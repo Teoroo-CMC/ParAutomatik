@@ -12,6 +12,7 @@
     - [**References**](#references)
 - [**Installation**](#installation)
   - [**HowTo**](#howto)
+- [Contact](#contact)
 
 # **Background** 
 ### **Summary**
@@ -147,11 +148,7 @@ Prerequirements:
    <li> Install neccesarry conda packages:
    
    ```bash
-<<<<<<< HEAD
    conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake libxc
-=======
-   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake blas
->>>>>>> 9b66f556c737ad93b534633978f37e6bf9290618
    ```
    
    Check your pip version; which -a pip 
@@ -169,31 +166,7 @@ Prerequirements:
    
    ```bash
    cd $PARAUTOMATIK/pgm
-<<<<<<< HEAD
    ```   
-=======
-   ```
-   
-   </li>
-   <li> dowload and install libxc from https://www.tddft.org/programs/libxc/download/
-   
-   ```bash
-   conda install -c conda-forge libxc
-
-#	   or 
-#	   
-#   wget http://www.tddft.org/programs/libxc/down.php?file=5.1.7/libxc-5.1.7.tar.gz
-#   mv down*.gz libxc-5.1.7.tar.gz
-#   tar -xvf libxc-5.1.7.tar.gz 
-#   cd $PARAUTOMATIK/pgm/libxc-5.1.7/
-#   ./configure --prefix=$PARAUTOMATIK/pgm/libxc-5.1.7/opt/
-#   make 
-#   make tests 
-#   make install
-#   cd $PARAUTOMATIK/pgm
-   ```
-   
->>>>>>> 9b66f556c737ad93b534633978f37e6bf9290618
    </li> 
    
    <li> get the skprogs software from the skkprogs git repository
@@ -204,17 +177,9 @@ Prerequirements:
    FC=gfortran cmake -DCMAKE_INSTALL_PREFIX=$PARAUTOMATIK/pgm/skprogs/opt/ -DCMAKE_Fortran_FLAGS=-fopenmp -B _build 
    cmake --build _build -- -j 
    cmake --install _build 
-<<<<<<< HEAD
-   cd $PARAUTOMATIK/ogm/skprogs/sktools
+   cd $PARAUTOMATIK/pgm/skprogs/sktools
    pip install . 
    export PATH=$PARAUTOMATIK/pgm/skprogs/opt/bin:${PATH}
-=======
-   cd $PARAUTOMATIK/pgm/skprogs/sktools 
-   pip install . 
-   cd $PARAUTOMATIK 	   
-   source $PARAUTOMATIK/pgm/skprogs/opt/bin/skprogs-activate.sh
-#   ln -s $PARAUTOMATIK/pgm/skprogs/opt/bin/skgen $PARAUTOMATIK/pgm/skprogs/opt/lib/python3.9/site-packages/sktools/sk_util.py
->>>>>>> 9b66f556c737ad93b534633978f37e6bf9290618
    cd $PARAUTOMATIK/pgm
    ```
    
