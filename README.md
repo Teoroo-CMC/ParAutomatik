@@ -193,7 +193,7 @@ Prerequirements:
    
    </li>
    
-   <li> Install PiNN and TensorFlow using pip (conda version does not work, https://github.com/yqshao/PiNN to get ase functionalities).
+   <li> Install PiNN and TensorFlow using pip.
   
    ```bash
      pip install tensorflow-gpu 
