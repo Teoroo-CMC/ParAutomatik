@@ -138,9 +138,9 @@ Prerequirements:
    <li> start the conda environment:
 
    ```bash 
-   conda activate parautomatik
    unset PATH
    /bin/bash 
+   conda activate parautomatik
    ````
    
    </li>
@@ -148,7 +148,7 @@ Prerequirements:
    <li> Install neccesarry conda packages:
    
    ```bash
-   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake libxc
+   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake libxc sympy
    ```
    
    Check your pip version; which -a pip 
@@ -169,7 +169,7 @@ Prerequirements:
    ```   
    </li> 
    
-   <li> get the skprogs software from the skkprogs git repository
+   <li> install the skprogs software from the skkprogs git repository
    
    ```bash
    git clone https://github.com/dftbplus/skprogs
