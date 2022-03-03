@@ -148,7 +148,7 @@ Prerequirements:
    <li> Install neccesarry conda packages:
    
    ```bash
-   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake libxc sympy
+   conda install -c conda-forge ase dftbplus gfortran jupyterlab pandas cvxopt seaborn tqdm cmake libxc sympy scikit-learn plotly
    ```
    
    Check your pip version; which -a pip 
